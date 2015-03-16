@@ -1,0 +1,22 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../czy/byhzg/wu_client/Assets/Scripts/czytest.cs">
+    <Files>
+      <File FileName="Assets/Scripts/StageObject_BlockA.cs" Line="21" Column="29" />
+      <File FileName="Assets/Scripts/AppSound.cs" Line="15" Column="25" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="423" Column="1" />
+      <File FileName="Assets/Scripts/BaseCharacterController.cs" Line="80" Column="1" />
+      <File FileName="Assets/Scripts/EnemyMain_A.cs" Line="99" Column="50" />
+      <File FileName="Assets/Scripts/EnemyMain.cs" Line="9" Column="2" />
+      <File FileName="../czy/byhzg/wu_client/Assets/Scripts/Configs/ConfigHelper.cs" Line="106" Column="24" />
+      <File FileName="../czy/byhzg/wu_client/Assets/Scripts/czytest.cs" Line="155" Column="4" />
+      <File FileName="../czy/byhzg/wu_client/Assets/Scripts/UI/Dialogs/TutorialDialog/TutorialBinding.cs" Line="82" Column="43" />
+      <File FileName="../czy/byhzg/wu_client/Assets/Scripts/UI/Dialogs/DialogManager.cs" Line="125" Column="55" />
+      <File FileName="../czy/byhzg/wu_client/Assets/Scripts/Controls/ErrorMessage/CommonMessageDialog.cs" Line="48" Column="19" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

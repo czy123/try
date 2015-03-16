@@ -1,0 +1,72 @@
+luanet.load_assembly('UnityEngine')
+GameObject = luanet.import_type('UnityEngine.GameObject')
+Transform = luanet.import_type('UnityEngine.Transform')
+Resources = luanet.import_type('UnityEngine.Resources')
+Vector3 = luanet.import_type('UnityEngine.Vector3')
+Random = luanet.import_type('UnityEngine.Random')
+
+
+
+UISprite = luanet.import_type('UISprite')
+TweenPosition = luanet.import_type('TweenPosition')
+UIEventCommon = luanet.import_type('UIEventCommon')
+
+local SpriteCount =400
+local myData = {}
+
+
+function Start(name)
+	local go = GameObject.Find(name)
+
+	local yusongPrefab = Resources.Load("yusong")
+	local ruoruoPrefab  = Resources.Load("ruoruo");
+	local yusongPrefab1 = Resources.Load("yusong1");
+	local ruoruoPrefab1  = Resources.Load("ruoruo1");
+
+	for a=0,SpriteCount,4 do        
+		local go = GameObject.Instantiate(yusongPrefab);
+		go.transform.parent = rootUI;
+		go.transform.localPosition = Vector3.zero;
+		go.transform.localScale = Vector3.one;
+		local sprite = go:GetComponent('UISprite'); 
+		sprite.depth = Random.Range(0,SpriteCount);
+		myData[a] = sprite;
+
+		local go = GameObject.Instantiate(ruoruoPrefab);
+		go.transform.parent = rootUI;
+		go.transform.localPosition = Vector3.zero;
+		go.transform.localScale = Vector3.one;
+		local sprite = go:GetComponent('UISprite'); 
+		sprite.depth = Random.Range(0,SpriteCount);
+		myData[a+1] = sprite;
+
+		local go = GameObject.Instantiate(yusongPrefab1);
+		go.transform.parent = rootUI;
+		go.transform.localPosition = Vector3.zero;
+		go.transform.localScale = Vector3.one;
+		local sprite = go:GetComponent('UISprite'); 
+		sprite.depth = Random.Range(0,SpriteCount);
+		myData[a+2] = sprite;
+
+		local go = GameObject.Instantiate(ruoruoPrefab1);
+		go.transform.parent = rootUI;
+		go.transform.localPosition = Vector3.zero;
+		go.transform.localScale = Vector3.one;
+		local sprite = go:GetComponent('UISprite'); 
+		sprite.depth = Random.Range(0,SpriteCount);
+		myData[a+3] = sprite;
+	end 
+end
+
+function Move()
+
+	for key, value in pairs(myData) do  
+		local sprite = value
+		local next = Vector3(Random.Range(-400,400),Random.Range(-260,260),0);
+		TweenPosition.Begin(sprite.gameObject,1,next);
+	end 
+		local firstNext = Vector3( Random.Range(-400,400) , Random.Range(-260,260),0);
+		local firstPosition = TweenPosition.Begin(myData[0].gameObject,1,firstNext);
+		UIEventCommon.EventMove(firstPosition);
+
+end

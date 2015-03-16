@@ -1,0 +1,71 @@
+﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+
+public class UIMain  {
+
+	private static int SpriteCount = 100;
+	
+	private static List<UISprite>spriteList;
+	
+	// Use this for initialization
+	static public  void Start (string root) 
+	{
+		spriteList = new List<UISprite>();
+		Transform rootUI = GameObject.Find(root).transform;
+		GameObject yusongPrefab = Resources.Load("yusong") as GameObject;
+		GameObject ruoruoPrefab  = Resources.Load("ruoruo") as GameObject;
+		GameObject yusongPrefab1 = Resources.Load("yusong1") as GameObject;
+		GameObject ruoruoPrefab1  = Resources.Load("ruoruo1") as GameObject;
+		
+		for(int i =0; i< SpriteCount; i++)
+		{
+			GameObject go = Object.Instantiate(yusongPrefab) as GameObject;
+			go.transform.parent = rootUI;
+			go.transform.localPosition = Vector3.zero;
+			go.transform.localScale = Vector3.one;
+			UISprite sprite = go.GetComponent("UISprite") as UISprite;
+			sprite.depth = Random.Range(0,SpriteCount);
+			spriteList.Add(sprite);
+			
+			go = Object.Instantiate(ruoruoPrefab) as GameObject;
+			go.transform.parent = rootUI;
+			go.transform.localPosition = Vector3.zero;
+			go.transform.localScale = Vector3.one;
+			sprite = go.GetComponent("UISprite") as UISprite;
+			sprite.depth = Random.Range(0,SpriteCount);
+			spriteList.Add(sprite);
+
+			go = Object.Instantiate(yusongPrefab1) as GameObject;
+			go.transform.parent = rootUI;
+			go.transform.localPosition = Vector3.zero;
+			go.transform.localScale = Vector3.one;
+			sprite = go.GetComponent("UISprite") as UISprite;
+			sprite.depth = Random.Range(0,SpriteCount);
+			spriteList.Add(sprite);
+			
+			go = Object.Instantiate(ruoruoPrefab1) as GameObject;
+			go.transform.parent = rootUI;
+			go.transform.localPosition = Vector3.zero;
+			go.transform.localScale = Vector3.one;
+			sprite = go.GetComponent("UISprite") as UISprite;
+			sprite.depth = Random.Range(0,SpriteCount);
+			spriteList.Add(sprite);
+		}
+	}
+
+	static public void Move()
+	{
+		for(int i =1; i<spriteList.Count; i++ )
+		{
+			UISprite	sprite = spriteList[i];
+			Vector3 next = new Vector3( Random.Range(-400,400) , Random.Range(-260,260),0);
+			TweenPosition position = TweenPosition.Begin(sprite.gameObject,1,next);
+		}
+		
+		Vector3 firstNext = new Vector3( Random.Range(-400,400) , Random.Range(-260,260),0);
+		TweenPosition firstPosition = TweenPosition.Begin(spriteList[0].gameObject,1,firstNext);
+		UIEventCommon.EventMove(firstPosition);
+	}
+
+}
