@@ -19,7 +19,7 @@
                     <key>needs-shine</key>  
                     <true/>  
                     <key>url</key>  
-                    <string>http://http://192.168.10.66:80/Icon-72.png</string>  
+                    <string>http://192.168.10.66:80/Icon-72.png</string>  
                 </dict>  
                 <dict>  
                     <key>kind</key>  
@@ -27,15 +27,15 @@
                     <key>needs-shine</key>  
                     <true/>  
                     <key>url</key>  
-                    <string>http://http://192.168.10.66:80/Icon-76.png</string>  
+                    <string>http://192.168.10.66:80/Icon-76.png</string>  
                 </dict>  
             </array>  
             <key>metadata</key>  
             <dict>  
-                <key>com.baile1.hundred.zhizunby</key>  
+                <key>bundle-identifier</key>  
                 <string>com.baile1.hundred.zhizunby</string>  
                 <key>bundle-version</key>  
-                <string>1.0.0</string>  
+                <string>1.0.1</string>  
                 <key>kind</key>  
                 <string>software</string>  
                 <key>title</key>  
